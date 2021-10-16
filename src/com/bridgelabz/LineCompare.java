@@ -2,12 +2,6 @@ package com.bridgelabz;
 import java.util.Scanner;
 public class LineCompare {
 
-    static boolean CheckEquality(double LenthOfLine1 , double LenthOfLine2) {
-
-        if(LenthOfLine1==LenthOfLine2)
-            return true;
-        return false;
-    }
 
     public static void main(String[] args) {
 
@@ -43,15 +37,23 @@ public class LineCompare {
         System.out.println("Enter Y4 Point");
         y4 = sc.nextInt();
 
+        //Computation for line 2
         LenthOfLine2 = Math.sqrt((x4-x3)^2 + (y4-y3));
 
-        System.out.println(" Lenth Of Line 1 is : "+"("+x1+","+y1+"),"+"("+x2+","+y2+")===>" + LenthOfLine1);
-        System.out.println(" Lenth Of Line 2 is : "+"("+x3+","+y3+"),"+"("+x4+","+y4+")===>" + LenthOfLine2);
+        //represents lines co -ordinates
 
-        boolean Equals =CheckEquality(LenthOfLine1,LenthOfLine2);
-        if(Equals)
-            System.out.println("Both Lines Are Equals");
-        else
-            System.out.println("Both Lines Are Not Equals");
+        System.out.println("Lenth Of Line 1 is : "+"("+x1+","+y1+"),"+"("+x2+","+y2+")===>" + LenthOfLine1);
+        System.out.println("Lenth Of Line 2 is : "+"("+x3+","+y3+"),"+"("+x4+","+y4+")===>" + LenthOfLine2);
+
+        // line check
+
+        if(LenthOfLine1==LenthOfLine2)
+            System.out.println("Line 1 and Line 2 are equals");
+
+        else if(LenthOfLine1 < LenthOfLine2)
+            System.out.println("Line 1 is less than Line 2");
+
+        else if(LenthOfLine1 > LenthOfLine2)
+            System.out.println("Line 1 gretter than Line 2");
     }
 }
